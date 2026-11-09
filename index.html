@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<!-- Derek Matthew -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatDog Pet Supplies</title>
+
+    <style>
+        /* Derek's Styles */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f1e8;
+            color: #222;
+        }
+
+        header {
+            background-color: #0B6B53;
+            text-align: center;
+            padding: 15px;
+        }
+
+        header img {
+            width: 260px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        nav {
+            background-color: #084C3D;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #F4B942;
+        }
+
+        main {
+            width: 1000px;
+            max-width: 90%;
+            margin: 30px auto;
+        }
+
+        /* Video Background Section */
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            min-height: 400px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .color-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 35, 25, 0.55);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            padding: 30px;
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Cat and Dog Categories */
+
+        .categories {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .categories h2 {
+            color: #0B6B53;
+            font-size: 2em;
+        }
+
+        .category-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .category {
+            flex: 1;
+            min-width: 0;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .category h3 {
+            color: #0B6B53;
+            font-size: 1.6em;
+        }
+
+        .category p {
+            line-height: 1.5;
+        }
+
+        .category a {
+            display: inline-block;
+            background-color: #0B6B53;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .category a:hover {
+            background-color: #084C3D;
+        }
+
+        /* Featured Products */
+
+        .featured {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .featured h2 {
+            color: #0B6B53;
+        }
+
+        .featured p {
+            line-height: 1.6;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #084C3D;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Mobile Layout */
+
+        @media (max-width: 600px) {
+
+            header img {
+                width: 200px;
+            }
+
+            nav a {
+                margin: 5px 10px;
+                font-size: 0.9em;
+            }
+
+            main {
+                max-width: 95%;
+                margin: 15px auto;
+            }
+
+            .hero {
+                height: 65vh;
+                min-height: 400px;
+            }
+
+            .hero-content {
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .category-container {
+                flex-direction: column;
+            }
+
+            .category {
+                width: 100%;
+            }
+        }
+
+        /* Reduced Motion Accessibility */
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero video {
+                display: none;
+            }
+
+            .hero {
+                background-color: #084C3D;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/CatDog.png"
+             alt="CatDog Pet Supplies logo">
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="dogs.html">Dog Supplies</a>
+        <a href="cats.html">Cat Supplies</a>
+        <a href="about.html">About CatDog</a>
+    </nav>
+
+    <main>
+
+        <!-- Background Video -->
+
+        <section class="hero">
+
+            <video autoplay muted loop playsinline
+                   preload="metadata"
+                   aria-hidden="true">
+                <source src="videos/catdog-background.mp4"
+                        type="video/mp4">
+            </video>
+
+            <div class="color-overlay" aria-hidden="true"></div>
+
+            <div class="hero-content">
+
+                <h1>Welcome to CatDog</h1>
+
+                <p>
+                    Everything your cat and dog need in one place.
+                    CatDog makes it easy for pet owners to find
+                    everyday food, treats, toys, beds, and other
+                    supplies online.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Shop by Pet -->
+
+        <section class="categories">
+
+            <h2>Shop by Pet</h2>
+
+            <div class="category-container">
+
+                <div class="category">
+
+                    <h3>🐶 Dog Supplies</h3>
+
+                    <p>
+                        Find dog food, treats, toys, collars,
+                        leashes, beds, and everyday supplies
+                        for your best friend.
+                    </p>
+
+                    <a href="dogs.html">Shop Dogs</a>
+
+                </div>
+
+                <div class="category">
+
+                    <h3>🐱 Cat Supplies</h3>
+
+                    <p>
+                        Find cat food, treats, toys, litter
+                        supplies, scratching posts, beds,
+                        and more.
+                    </p>
+
+                    <a href="cats.html">Shop Cats</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Featured Products -->
+
+        <section class="featured">
+
+            <h2>Featured Products</h2>
+
+            <p>
+                We're still building our shelves!
+                Featured products and special deals
+                for cats and dogs will be added here.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CatDog Pet Supplies</p>
+    </footer>
+
+</body>
+
+</html>
